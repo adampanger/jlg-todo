@@ -2,10 +2,11 @@ namespace JLGTodo.Api.Services;
 
 public class TodoService : ITodoService
 {
-    private readonly List<TodoItem> _items = [];
+    private readonly List<TodoItem> _items = [new() { Id = 1, Title = "Drink water" }];
 
     public TodoItem Create(TodoItem newItem)
     {
+        newItem.Id = _items.Count + 1;
         _items.Add(newItem);
         return newItem;
     }
