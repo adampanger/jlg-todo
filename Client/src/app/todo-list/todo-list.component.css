@@ -1,0 +1,7 @@
+.completed {
+  opacity: 0.5;
+}
+
+.completed span {
+  text-decoration: line-through;
+}

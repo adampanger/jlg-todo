@@ -1,0 +1,9 @@
+<div class="todo-form md:max-w-[66%] w-full flex justify-center gap-4">
+  <input
+    class="w-full"
+    type="text"
+    placeholder="Enter a new task"
+    [(ngModel)]="newTodoTitle"
+  />
+  <button (click)="addTodo()">Add</button>
+</div>

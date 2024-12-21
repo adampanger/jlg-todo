@@ -1,0 +1,21 @@
+<ul class="todo-list md:w-[75%] w-full flex flex-col items-center gap-4">
+  <li
+    *ngFor="let todo of todos$ | async"
+    [class.completed]="todo.isCompleted"
+    class="w-full h-[60px] bg-todo-itembg rounded-md flex items-center px-4 gap-4 border border-todo-accent"
+  >
+    <input
+      type="checkbox"
+      (change)="toggleCompletion(todo, $any($event.target).checked)"
+      [checked]="todo.isCompleted"
+    />
+    <div class="w-full">
+      <span>
+        {{ todo.title }}
+      </span>
+    </div>
+    <button class="text-todo-light" (click)="deleteTodo(todo.id)">
+      Delete
+    </button>
+  </li>
+</ul>
